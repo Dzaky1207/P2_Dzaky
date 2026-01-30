@@ -89,30 +89,18 @@
                         <span class="r"></span>
                     </div>
                     <div class="card mb-0">
-                        <form class="form" action="{{ route('login') }}" method="POST">
-                            @csrf
                             <div class="card-body">
                                 <div class="text-center">
                                     <a href="#"><img src="../assets/images/logo-dark.svg" alt="img" /></a>
                                 </div>
                                 <h4 class="text-center f-w-500 mt-4 mb-3">Login</h4>
                                 <div class="form-group mb-3">
-                                    <input type="email" class="form-control" id="email" name="email"
-                                        value="{{ old('email') }}" placeholder="Email Address" />
-                                    @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
+                                    <input type="email" class="form-control" name="email"
+                                       placeholder="Email Address" />
                                 </div>
                                 <div class="form-group mb-3">
-                                    <input type="password" class="form-control" id="password" name="password"
+                                    <input type="password" class="form-control" name="password"
                                         placeholder="Password" />
-                                    @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
                                 </div>
                                 <div class="d-flex mt-1 justify-content-between align-items-center">
                                     <div class="form-check">
@@ -122,14 +110,13 @@
                                     <h6 class="text-secondary f-w-400 mb-0">Forgot Password?</h6>
                                 </div>
                                 <div class="text-center mt-4">
-                                    <button type="submit" class="btn btn-primary shadow px-sm-4">Login</button>
+                                    <a href="{{ route('dashboard') }}" class="btn btn-primary">Login</a>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-end mt-4">
                                     <h6 class="f-w-500 mb-0">Don't have an Account?</h6>
                                     <a href="{{ route('register') }}" class="link-primary">Create Account</a>
                                 </div>
                             </div>
-                        </form>
                     </div>
                 </div>
             </div>

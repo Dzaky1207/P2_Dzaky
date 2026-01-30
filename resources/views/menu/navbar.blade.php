@@ -110,60 +110,6 @@
                             <span class="pc-mtext" data-i18n="Dashboard">Dashboard</span>
                         </a>
                     </li>
-                    <li class="pc-item pc-caption">
-                        <label data-i18n="pages">Master</label>
-                        <i class="ph ph-shield-checkered"></i>
-                    </li>
-                    <li class="pc-item pc-hasmenu">
-                        <a href="#!" class="pc-link"><span class="pc-micon"> <i class="ph ph-tree-structure"></i> </span><span class="pc-mtext" data-i18n="Menu levels">Master Pages</span><span class="pc-arrow"><i class="ti ti-chevron-right"></i></span></a>
-                        <ul class="pc-submenu">
-                            <li class="pc-item"><a class="pc-link" href="{{ route('sumber.index') }}" data-i18n="sunberg">Sumber Surat</a></li>
-                            <li class="pc-item"><a class="pc-link" href="{{ route('tujuan.index') }}" data-i18n="tujuan">Tujuan Surat</a></li>
-                            <li class="pc-item"><a class="pc-link" href="{{ route('tembusan.tembusan') }}" data-i18n="tembusan">Tembusan</a></li>
-                            <li class="pc-item"><a class="pc-link" href="{{ route('jenis.index') }}" data-i18n="jenis">Kategori Surat</a></li>
-                            <li class="pc-item"><a class="pc-link" href="{{ route('kelompok.index') }}" data-i18n="kelompok">Kategori Kelompok</a></li>
-                        </ul>
-                    </li>
-                    <li class="pc-item pc-caption">
-                        <label data-i18n="pages">Pages</label>
-                        <i class="ph ph-shield-checkered"></i>
-                    </li>
-                    <li class="pc-item">
-                        <a href="{{ route('staff.index') }}" class="pc-link">
-                            <span class="pc-micon"> <i class="ph ph-user-circle-plus"></i></span>
-                            <span class="pc-mtext">Daftar Data Staff</span>
-                        </a>
-                    </li>
-                    <li class="pc-item">
-                        <a href="{{ route('surat.formsurat') }}" class="pc-link">
-                            <span class="pc-micon"> <i class="ph ph-note"></i></span>
-                            <span class="pc-mtext">Surat-Surat</span>
-                        </a>
-                    </li>
-                    <li class="pc-item">
-                        <a href="{{ route('surat.masuk') }}" class="pc-link">
-                            <span class="pc-micon"> <i class="ph ph-paper-plane-tilt"></i></span>
-                            <span class="pc-mtext">Surat Masuk</span>
-                        </a>
-                    </li>
-                    <li class="pc-item">
-                        <a href="{{ route('surat.keluar') }}" class="pc-link">
-                            <span class="pc-micon"> <i class="ph ph-notebook"></i></span>
-                            <span class="pc-mtext">Surat Keluar</span>
-                        </a>
-                    </li>
-                    <li class="pc-item">
-                        <a href="{{ route('surat.formrekap') }}" class="pc-link">
-                            <span class="pc-micon"> <i class="ph ph-stack"></i></span>
-                            <span class="pc-mtext">Rekap Surat</span>
-                        </a>
-                    </li>
-                    <li class="pc-item">
-                        <a href="{{ route('surat.cari') }}" class="pc-link">
-                            <span class="pc-micon"> <i class="ph ph-file-search"></i></span>
-                            <span class="pc-mtext">Cari Surat</span>
-                        </a>
-                    </li>
                 </ul>
             </div>
         </div>

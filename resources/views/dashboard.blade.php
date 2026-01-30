@@ -1,460 +1,654 @@
-@extends('menu/navbar')
+<!doctype html>
+<html lang="en">
 
-@section('content')
-    <div class="pc-container">
-        <div class="pc-content">
-            <!-- [ breadcrumb ] start -->
-            <div class="page-header">
-                <div class="page-block">
-                    <div class="row align-items-center">
-                        <div class="col-md-12">
-                            <div class="page-header-title">
-                                <h5 class="mb-0">Home</h5>
+
+<!-- Mirrored from themesbrand.com/lexa-mvc5/layouts/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 14 Jan 2026 08:16:48 GMT -->
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Dashboard | Lexa - Admin & Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+    <!-- Bootstrap Css -->
+    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Icons Css -->
+    <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet">
+    <!-- App Css -->
+    <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet">
+
+
+</head>
+
+
+<body data-sidebar="dark">
+
+    <!-- <body data-layout="horizontal" data-topbar="colored"> -->
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        <header id="page-topbar">
+            <div class="navbar-header">
+                <div class="d-flex">
+                    <!-- LOGO -->
+                    <div class="navbar-brand-box">
+                        <a href="index.html" class="logo logo-dark">
+                            <span class="logo-sm">
+                                <img src="assets/images/logo-sm.png" alt="" height="22">
+                            </span>
+                            <span class="logo-lg">
+                                <img src="assets/images/logo-dark.png" alt="" height="17">
+                            </span>
+                        </a>
+
+                        <a href="index.html" class="logo logo-light">
+                            <span class="logo-sm">
+                                <img src="assets/images/logo-sm.png" alt="" height="22">
+                            </span>
+                            <span class="logo-lg">
+                                <img src="assets/images/logo-light.png" alt="" height="18">
+                            </span>
+                        </a>
+                    </div>
+
+                    <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect vertical-menu-btn">
+                        <i class="mdi mdi-menu"></i>
+                    </button>
+
+                    <div class="d-none d-sm-block">
+                        <div class="dropdown dropdown-topbar pt-3 mt-1 d-inline-block">
+                            <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Create <i class="mdi mdi-chevron-down"></i>
+                            </a>
+
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Separated link</a>
                             </div>
                         </div>
-                        <div class="col-md-12">
-                            <ul class="breadcrumb mb-0">
-                                <li class="breadcrumb-item"><a href="../dashboard/index.html">Home</a></li>
-                                <li class="breadcrumb-item"><a href="javascript: void(0)">Dashboard</a></li>
-                                <li class="breadcrumb-item" aria-current="page">Home</li>
+                    </div>
+                </div>
+
+                <div class="d-flex">
+
+                    <!-- App Search-->
+                    <form class="app-search d-none d-lg-block">
+                        <div class="position-relative">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <span class="fa fa-search"></span>
+                        </div>
+                    </form>
+
+                    <div class="dropdown d-inline-block d-lg-none ms-2">
+                        <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="mdi mdi-magnify"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
+                            aria-labelledby="page-header-search-dropdown">
+
+                            <form class="p-3">
+                                <div class="form-group m-0">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+                    <div class="dropdown d-none d-md-block ms-2">
+                        <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="me-2" src="assets/images/flags/us_flag.jpg" alt="Header Language" height="16"> English <span class="mdi mdi-chevron-down"></span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end">
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <img src="assets/images/flags/germany_flag.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle"> German </span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <img src="assets/images/flags/italy_flag.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle"> Italian </span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <img src="assets/images/flags/french_flag.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle"> French </span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <img src="assets/images/flags/spain_flag.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle"> Spanish </span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <img src="assets/images/flags/russia_flag.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle"> Russian </span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown d-none d-lg-inline-block">
+                        <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
+                            <i class="mdi mdi-fullscreen font-size-24"></i>
+                        </button>
+                    </div>
+
+                    <div class="dropdown d-inline-block ms-1">
+                        <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="ti-bell"></i>
+                            <span class="badge text-bg-danger rounded-pill">3</span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                            aria-labelledby="page-header-notifications-dropdown">
+                            <div class="p-3">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h5 class="m-0"> Notifications (258) </h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-simplebar style="max-height: 230px;">
+                                <a href="javascript:void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0 me-3">
+                                            <div class="avatar-xs">
+                                                <span class="avatar-title border-success rounded-circle ">
+                                                    <i class="mdi mdi-cart-outline"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">Your order is placed</h6>
+                                            <div class="text-muted">
+                                                <p class="mb-1">If several languages coalesce the grammar</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a href="javascript:void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0 me-3">
+                                            <div class="avatar-xs">
+                                                <span class="avatar-title border-warning rounded-circle ">
+                                                    <i class="mdi mdi-message"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">New Message received</h6>
+                                            <div class="text-muted">
+                                                <p class="mb-1">You have 87 unread messages</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a href="javascript:void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0 me-3">
+                                            <div class="avatar-xs">
+                                                <span class="avatar-title border-info rounded-circle ">
+                                                    <i class="mdi mdi-glass-cocktail"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">Your item is shipped</h6>
+                                            <div class="text-muted">
+                                                <p class="mb-1">It is a long established fact that a reader will</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a href="javascript:void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0 me-3">
+                                            <div class="avatar-xs">
+                                                <span class="avatar-title border-primary rounded-circle ">
+                                                    <i class="mdi mdi-cart-outline"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">Your order is placed</h6>
+                                            <div class="text-muted">
+                                                <p class="mb-1">Dummy text of the printing and typesetting industry.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a href="javascript:void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0 me-3">
+                                            <div class="avatar-xs">
+                                                <span class="avatar-title border-warning rounded-circle ">
+                                                    <i class="mdi mdi-message"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">New Message received</h6>
+                                            <div class="text-muted">
+                                                <p class="mb-1">You have 87 unread messages</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="p-2 border-top">
+                                <a class="btn btn-sm btn-link font-size-14 w-100 text-center" href="javascript:void(0)">
+                                    View all
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="rounded-circle header-profile-user" src="assets/images/users/user-4.jpg"
+                                alt="Header Avatar">
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!-- item-->
+                            <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle font-size-17 text-muted align-middle me-1"></i> Profile</a>
+                            <a class="dropdown-item" href="#"><i class="mdi mdi-wallet font-size-17 text-muted align-middle me-1"></i> My Wallet</a>
+                            <a class="dropdown-item d-flex align-items-center" href="#"><i class="mdi mdi-cog font-size-17 text-muted align-middle me-1"></i> Settings<span class="badge bg-success ms-auto">11</span></a>
+                            <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline font-size-17 text-muted align-middle me-1"></i> Lock screen</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-danger" href="#"><i class="mdi mdi-power font-size-17 text-muted align-middle me-1 text-danger"></i> Logout</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
+                            <i class="mdi mdi-spin mdi-cog"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="vertical-menu">
+
+            <div data-simplebar class="h-100">
+
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+                    <!-- Left Menu Start -->
+                    <ul class="metismenu list-unstyled" id="side-menu">
+                        <li class="menu-title">Main</li>
+
+                        <li>
+                            <a href="{{ route('dashboard') }}" class="waves-effect">
+                                <i class="mdi mdi-view-dashboard"></i>
+                                <span class="badge rounded-pill bg-primary float-end">2</span>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('form') }}" class=" waves-effect">
+                                <i class="mdi mdi-calendar-check"></i>
+                                <span>Form Data diri</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class="mdi mdi-email-outline"></i>
+                                <span>Email</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="email-inbox.html">Inbox</a></li>
+                                <li><a href="email-read.html">Email Read</a></li>
+                                <li><a href="email-compose.html">Email Compose</a></li>
                             </ul>
-                        </div>
-                    </div>
+                        </li>
+
+                        <li>
+                            <a href="chat.html" class=" waves-effect">
+                                <i class="mdi mdi-chat-processing-outline"></i>
+                                <span class="badge rounded-pill bg-danger float-end">Hot</span>
+                                <span>Chat</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="kanbanboard.html" class=" waves-effect">
+                                <i class="mdi mdi-billboard"></i>
+                                <span class="badge rounded-pill bg-success float-end">New</span>
+                                <span>Kanban Board</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
+                <!-- Sidebar -->
             </div>
-            <!-- [ breadcrumb ] end -->
-
-            <!-- [ Main Content ] start -->
-            <div class="row">
-                <!-- [ daily sales section ] start -->
-                <div class="col-md-6 col-xl-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h6 class="mb-4">Daily Sales</h6>
-                            <div class="row d-flex align-items-center">
-                                <div class="col-9">
-                                    <h3 class="f-w-300 d-flex align-items-center m-b-0"><i class="ph ph-arrow-up text-success f-30 m-r-10"></i>$249.95</h3>
-                                </div>
-
-                                <div class="col-3 text-end">
-                                    <p class="m-b-0">67%</p>
-                                </div>
-                            </div>
-                            <div class="progress m-t-30" style="height: 7px">
-                                <div
-                                    class="progress-bar bg-brand-color-1"
-                                    role="progressbar"
-                                    style="width: 50%"
-                                    aria-valuenow="50"
-                                    aria-valuemin="0"
-                                    aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- [ daily sales section ] end -->
-
-                <!-- [ Monthly  sales section ] start -->
-                <div class="col-md-6 col-xl-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h6 class="mb-4">Monthly Sales</h6>
-                            <div class="row d-flex align-items-center">
-                                <div class="col-9">
-                                    <h3 class="f-w-300 d-flex align-items-center m-b-0"><i class="ph ph-arrow-down text-danger f-30 m-r-10"></i>$2.942.32</h3>
-                                </div>
-                                <div class="col-3 text-end">
-                                    <p class="m-b-0">36%</p>
-                                </div>
-                            </div>
-                            <div class="progress m-t-30" style="height: 7px">
-                                <div
-                                    class="progress-bar bg-brand-color-2"
-                                    role="progressbar"
-                                    style="width: 35%"
-                                    aria-valuenow="35"
-                                    aria-valuemin="0"
-                                    aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- [ Monthly  sales section ] end -->
-
-                <!-- [ year  sales section ] start -->
-                <div class="col-md-12 col-xl-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h6 class="mb-4">Yearly Sales</h6>
-                            <div class="row d-flex align-items-center">
-                                <div class="col-9">
-                                    <h3 class="f-w-300 d-flex align-items-center m-b-0"><i class="ph ph-arrow-up text-success f-30 m-r-10"></i>$8.638.32</h3>
-                                </div>
-                                <div class="col-3 text-end">
-                                    <p class="m-b-0">80%</p>
-                                </div>
-                            </div>
-                            <div class="progress m-t-30" style="height: 7px">
-                                <div
-                                    class="progress-bar bg-brand-color-1"
-                                    role="progressbar"
-                                    style="width: 70%"
-                                    aria-valuenow="70"
-                                    aria-valuemin="0"
-                                    aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- [ year  sales section ] end -->
-
-                <!-- [ worldLow section ] start -->
-                <div class="col-xl-8 col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5>Users From United States</h5>
-                        </div>
-                        <div class="card-body">
-                            <div id="world-low" style="height: 450px"></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- [ worldLow section ] end -->
-
-                <!-- [ statistics year chart ] start -->
-                <div class="col-xl-4 col-md-6">
-                    <div class="card bg-primary">
-                        <div class="card-header border-0">
-                            <h5 class="text-white">Earnings</h5>
-                        </div>
-                        <div class="card-body" style="padding: 0 25px">
-                            <div class="earning-text mb-0">
-                                <h3 class="mb-2 text-white f-w-300">$4295.36 <i class="ph ph-arrow-up teal accent-3"></i></h3>
-                                <span class="text-uppercase text-white d-block">Total Earnings</span>
-                            </div>
-                            <div id="Widget-line-chart" class="WidgetlineChart2 ChartShadow" style="height: 180px"></div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body border-bottom">
-                            <div class="row d-flex align-items-center">
-                                <div class="col-auto">
-                                    <i class="ph ph-lightbulb-filament f-30 text-success"></i>
-                                </div>
-                                <div class="col">
-                                    <h3 class="f-w-300">235</h3>
-                                    <span class="d-block text-uppercase">TOTAL IDEAS</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="row d-flex align-items-center">
-                                <div class="col-auto">
-                                    <i class="ph ph-map-pin-line f-30 text-primary"></i>
-                                </div>
-                                <div class="col">
-                                    <h3 class="f-w-300">26</h3>
-                                    <span class="d-block text-uppercase">TOTAL LOCATIONS</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- [ statistics year chart ] end -->
-
-                <!-- [social-media section] start -->
-                <div class="col-md-12 col-xl-4">
-                    <div class="card card-social">
-                        <div class="card-body border-bottom">
-                            <div class="row align-items-center justify-content-center">
-                                <div class="col-auto">
-                                    <i class="ti ti-brand-facebook-filled text-primary f-36"></i>
-                                </div>
-                                <div class="col text-end">
-                                    <h3>12,281</h3>
-                                    <h5 class="text-success mb-0">+7.2% <span class="text-muted">Total Likes</span></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="row align-items-center justify-content-center card-active">
-                                <div class="col-6">
-                                    <h6 class="text-center m-b-10"><span class="text-muted m-r-5">Target:</span>35,098</h6>
-                                    <div class="progress">
-                                        <div
-                                            class="progress-bar bg-brand-color-1"
-                                            role="progressbar"
-                                            style="width: 60%; height: 6px"
-                                            aria-valuenow="60"
-                                            aria-valuemin="0"
-                                            aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <h6 class="text-center m-b-10"><span class="text-muted m-r-5">Duration:</span>350</h6>
-                                    <div class="progress">
-                                        <div
-                                            class="progress-bar bg-brand-color-2"
-                                            role="progressbar"
-                                            style="width: 45%; height: 6px"
-                                            aria-valuenow="45"
-                                            aria-valuemin="0"
-                                            aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <div class="card card-social">
-                        <div class="card-body border-bottom">
-                            <div class="row align-items-center justify-content-center">
-                                <div class="col-auto">
-                                    <i class="ti ti-brand-twitter-filled text-info f-36"></i>
-                                </div>
-                                <div class="col text-end">
-                                    <h3>11,200</h3>
-                                    <h5 class="text-c-purple mb-0">+6.2% <span class="text-muted">Total Likes</span></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="row align-items-center justify-content-center card-active">
-                                <div class="col-6">
-                                    <h6 class="text-center m-b-10"><span class="text-muted m-r-5">Target:</span>34,185</h6>
-                                    <div class="progress">
-                                        <div
-                                            class="progress-bar progress-c-green"
-                                            role="progressbar"
-                                            style="width: 40%; height: 6px"
-                                            aria-valuenow="40"
-                                            aria-valuemin="0"
-                                            aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <h6 class="text-center m-b-10"><span class="text-muted m-r-5">Duration:</span>800</h6>
-                                    <div class="progress">
-                                        <div
-                                            class="progress-bar progress-c-blue"
-                                            role="progressbar"
-                                            style="width: 70%; height: 6px"
-                                            aria-valuenow="70"
-                                            aria-valuemin="0"
-                                            aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <div class="card card-social">
-                        <div class="card-body border-bottom">
-                            <div class="row align-items-center justify-content-center">
-                                <div class="col-auto">
-                                    <i class="ti ti-brand-google-filled text-danger f-36"></i>
-                                </div>
-                                <div class="col text-end">
-                                    <h3>10,500</h3>
-                                    <h5 class="text-primary mb-0">+5.9% <span class="text-muted">Total Likes</span></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="row align-items-center justify-content-center card-active">
-                                <div class="col-6">
-                                    <h6 class="text-center m-b-10"><span class="text-muted m-r-5">Target:</span>25,998</h6>
-                                    <div class="progress">
-                                        <div
-                                            class="progress-bar bg-brand-color-1"
-                                            role="progressbar"
-                                            style="width: 80%; height: 6px"
-                                            aria-valuenow="80"
-                                            aria-valuemin="0"
-                                            aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <h6 class="text-center m-b-10"><span class="text-muted m-r-5">Duration:</span>900</h6>
-                                    <div class="progress">
-                                        <div
-                                            class="progress-bar bg-brand-color-2"
-                                            role="progressbar"
-                                            style="width: 50%; height: 6px"
-                                            aria-valuenow="50"
-                                            aria-valuemin="0"
-                                            aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- [social-media section] end -->
-
-                <!-- [ rating list ] starts-->
-                <div class="col-xl-4 col-md-6">
-                    <div class="card user-list">
-                        <div class="card-header">
-                            <h5>Rating</h5>
-                        </div>
-                        <div class="card-body">
-                            <div class="row align-items-center justify-content-center m-b-20">
-                                <div class="col-6">
-                                    <h2 class="f-w-300 d-flex align-items-center float-start m-0">4.7 <i class="ti ti-star-filled f-10 m-l-10 text-warning"></i></h2>
-                                </div>
-                                <div class="col-6">
-                                    <h6 class="d-flex align-items-center float-end m-0">0.4 <i class="ti ti-caret-up-filled text-success f-22 m-l-10"></i></h6>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xl-12">
-                                    <h6 class="align-items-center float-start"><i class="ti ti-star-filled f-10 m-r-10 text-warning"></i>5</h6>
-                                    <h6 class="align-items-center float-end">384</h6>
-                                    <div class="progress m-t-30 m-b-20" style="height: 6px">
-                                        <div
-                                            class="progress-bar bg-brand-color-1"
-                                            role="progressbar"
-                                            style="width: 70%"
-                                            aria-valuenow="70"
-                                            aria-valuemin="0"
-                                            aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-12">
-                                    <h6 class="align-items-center float-start"><i class="ti ti-star-filled f-10 m-r-10 text-warning"></i>4</h6>
-                                    <h6 class="align-items-center float-end">145</h6>
-                                    <div class="progress m-t-30 m-b-20" style="height: 6px">
-                                        <div
-                                            class="progress-bar bg-brand-color-1"
-                                            role="progressbar"
-                                            style="width: 35%"
-                                            aria-valuenow="35"
-                                            aria-valuemin="0"
-                                            aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-12">
-                                    <h6 class="align-items-center float-start"><i class="ti ti-star-filled f-10 m-r-10 text-warning"></i>3</h6>
-                                    <h6 class="align-items-center float-end">24</h6>
-                                    <div class="progress m-t-30 m-b-20" style="height: 6px">
-                                        <div
-                                            class="progress-bar bg-brand-color-1"
-                                            role="progressbar"
-                                            style="width: 25%"
-                                            aria-valuenow="25"
-                                            aria-valuemin="0"
-                                            aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-12">
-                                    <h6 class="align-items-center float-start"><i class="ti ti-star-filled f-10 m-r-10 text-warning"></i>2</h6>
-                                    <h6 class="align-items-center float-end">1</h6>
-                                    <div class="progress m-t-30 m-b-20" style="height: 6px">
-                                        <div
-                                            class="progress-bar bg-brand-color-1"
-                                            role="progressbar"
-                                            style="width: 10%"
-                                            aria-valuenow="10"
-                                            aria-valuemin="0"
-                                            aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-12">
-                                    <h6 class="align-items-center float-start"><i class="ti ti-star-filled f-10 m-r-10 text-warning"></i>1</h6>
-                                    <h6 class="align-items-center float-end">0</h6>
-                                    <div class="progress m-t-30 m-b-20" style="height: 6px">
-                                        <div
-                                            class="progress-bar"
-                                            role="progressbar"
-                                            style="width: 0"
-                                            aria-valuenow="0"
-                                            aria-valuemin="0"
-                                            aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- [ rating list ] end -->
-
-                <!-- [ Recent Users ] start -->
-                <div class="col-xl-8 col-md-6">
-                    <div class="card Recent-Users table-card">
-                        <div class="card-header">
-                            <h5>Recent Users</h5>
-                        </div>
-                        <div class="card-body px-0 py-3">
-                            <div class="table-responsive">
-                                <table class="table table-hover mb-0">
-                                    <tbody>
-                                        <tr class="unread">
-                                            <td><img class="rounded-circle" style="width: 40px" src="../assets/images/user/avatar-1.png" alt="activity-user" /></td>
-                                            <td>
-                                                <h6 class="mb-1">Isabella Christensen</h6>
-                                                <p class="m-0">Lorem Ipsum is simply dummy</p>
-                                            </td>
-                                            <td>
-                                                <h6 class="text-muted"><i class="ti ti-circle-filled text-success f-10 m-r-15"></i>11 MAY 12:56</h6>
-                                            </td>
-                                            <td><a href="#!" class="badge me-2 bg-brand-color-2 text-white f-12">Reject</a><a href="#!" class="badge me-2 bg-brand-color-1 text-white f-12">Approve</a></td>
-                                        </tr>
-                                        <tr class="unread">
-                                            <td><img class="rounded-circle" style="width: 40px" src="../assets/images/user/avatar-2.png" alt="activity-user" /></td>
-                                            <td>
-                                                <h6 class="mb-1">Mathilde Andersen</h6>
-                                                <p class="m-0">Lorem Ipsum is simply</p>
-                                            </td>
-                                            <td>
-                                                <h6 class="text-muted"><i class="ti ti-circle-filled text-danger f-10 m-r-15"></i>11 MAY 10:35</h6>
-                                            </td>
-                                            <td><a href="#!" class="badge me-2 bg-brand-color-2 text-white f-12">Reject</a><a href="#!" class="badge me-2 bg-brand-color-1 text-white f-12">Approve</a></td>
-                                        </tr>
-                                        <tr class="unread">
-                                            <td><img class="rounded-circle" style="width: 40px" src="../assets/images/user/avatar-3.png" alt="activity-user" /></td>
-                                            <td>
-                                                <h6 class="mb-1">Karla Sorensen</h6>
-                                                <p class="m-0">Lorem Ipsum is simply dummy</p>
-                                            </td>
-                                            <td>
-                                                <h6 class="text-muted"><i class="ti ti-circle-filled text-success f-10 m-r-15"></i>9 MAY 17:38</h6>
-                                            </td>
-                                            <td><a href="#!" class="badge me-2 bg-brand-color-2 text-white f-12">Reject</a><a href="#!" class="badge me-2 bg-brand-color-1 text-white f-12">Approve</a></td>
-                                        </tr>
-                                        <tr class="unread">
-                                            <td><img class="rounded-circle" style="width: 40px" src="../assets/images/user/avatar-1.png" alt="activity-user" /></td>
-                                            <td>
-                                                <h6 class="mb-1">Ida Jorgensen</h6>
-                                                <p class="m-0">Lorem Ipsum is simply</p>
-                                            </td>
-                                            <td>
-                                                <h6 class="text-muted f-w-300"><i class="ti ti-circle-filled text-danger f-10 m-r-15"></i>19 MAY 12:56</h6>
-                                            </td>
-                                            <td><a href="#!" class="badge me-2 bg-brand-color-2 text-white f-12">Reject</a><a href="#!" class="badge me-2 bg-brand-color-1 text-white f-12">Approve</a></td>
-                                        </tr>
-                                        <tr class="unread">
-                                            <td><img class="rounded-circle" style="width: 40px" src="../assets/images/user/avatar-2.png" alt="activity-user" /></td>
-                                            <td>
-                                                <h6 class="mb-1">Albert Andersen</h6>
-                                                <p class="m-0">Lorem Ipsum is</p>
-                                            </td>
-                                            <td>
-                                                <h6 class="text-muted"><i class="ti ti-circle-filled text-success f-10 m-r-15"></i>21 July 12:56</h6>
-                                            </td>
-                                            <td><a href="#!" class="badge me-2 bg-brand-color-2 text-white f-12">Reject</a><a href="#!" class="badge me-2 bg-brand-color-1 text-white f-12">Approve</a></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- [ Recent Users ] end -->
-            </div>
-            <!-- [ Main Content ] end -->
         </div>
+        <!-- Left Sidebar End -->
+
+
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+
+                        <!-- ================= FORM ================= -->
+                        <div class="col-md-5">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="mb-0">Application Letter Form</h5>
+                                </div>
+                                <div class="card-body">
+
+                                    <h6>Sender</h6>
+                                    <div class="mb-2">
+                                        <input type="text" class="form-control" id="your_name" placeholder="Your Name">
+                                    </div>
+                                    <div class="mb-2">
+                                        <textarea class="form-control" id="your_address" placeholder="Your Address"></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="date" class="form-control" id="date">
+                                    </div>
+
+                                    <h6>Recipient</h6>
+                                    <div class="mb-2">
+                                        <input type="text" class="form-control" id="hm_name" placeholder="Hiring Manager's Name">
+                                    </div>
+                                    <div class="mb-2">
+                                        <input type="text" class="form-control" id="hm_title" placeholder="Hiring Manager's Title">
+                                    </div>
+                                    <div class="mb-2">
+                                        <input type="text" class="form-control" id="company_name" placeholder="Company Name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <textarea class="form-control" id="company_address" placeholder="Company Address"></textarea>
+                                    </div>
+
+                                    <h6>Body</h6>
+                                    <div class="mb-2">
+                                        <input type="text" class="form-control" id="job_title" placeholder="Job Title">
+                                    </div>
+                                    <div class="mb-3">
+                                        <textarea class="form-control" id="body_paragraph" rows="5"
+                                            placeholder="Main body paragraph"></textarea>
+                                    </div>
+
+                                    <h6>Closing</h6>
+                                    <div class="mb-2">
+                                        <textarea class="form-control" id="closing_paragraph" rows="3"
+                                            placeholder="Closing paragraph"></textarea>
+                                    </div>
+                                    <div class="mb-2">
+                                        <input type="text" class="form-control" id="signature" placeholder="Your Name (Signature)">
+                                    </div>
+
+                                    <div class="d-flex gap-2 mt-4">
+                                        <button type="button" class="btn btn-primary w-100" id="btnSave">
+                                            Tambahkan ke Database
+                                        </button>
+
+                                        <button type="button" class="btn btn-success w-100" id="btnPrint">
+                                            Cetak ke PDF
+                                        </button>
+
+                                        <button type="button" class="btn btn-warning w-100" id="btnClear">
+                                            Clear Semua
+                                        </button>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ================= PREVIEW ================= -->
+                        <div class="col-md-7">
+                            <div class="card">
+                                <div class="card-body" style="font-family: 'Times New Roman', serif;">
+
+                                    <p id="p_name">[Your name]</p>
+                                    <p id="p_address">[Your address]</p>
+                                    <p id="p_date">[Date]</p>
+
+                                    <br>
+
+                                    <p id="p_hm_name">[Hiring manager's name]</p>
+                                    <p id="p_hm_title">[Hiring manager's title]</p>
+                                    <p id="p_company_name">[Company name]</p>
+                                    <p id="p_company_address">[Company address]</p>
+
+                                    <br>
+
+                                    <p>Dear <span id="p_dear">[Hiring manager's name]</span></p>
+
+                                    <p>
+                                        I'm writing to express my interest in the position of
+                                        <span id="p_job">[job title]</span> at
+                                        <span id="p_company_inline">[company]</span>.
+                                    </p>
+
+                                    <p id="p_body">
+                                        [Use the second paragraph to elaborate on how you would help the company.]
+                                    </p>
+
+                                    <p id="p_closing">
+                                        [Mention the additional documents included with your cover letter.]
+                                    </p>
+
+                                    <br>
+
+                                    <p>Sincerely,</p>
+                                    <p id="p_signature">[Your name]</p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- end page title -->
+
+
+                </div>
+                <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            © <script>
+                                document.write(new Date().getFullYear())
+                            </script> Lexa <span class="d-none d-sm-inline-block"> - Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand.</span>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- end main content-->
+
     </div>
-   @endsection
+    <!-- END layout-wrapper -->
+
+    <!-- Right Sidebar -->
+    <div class="right-bar">
+        <div data-simplebar class="h-100">
+
+            <div class="rightbar-title d-flex align-items-center px-3 py-4">
+
+                <h5 class="m-0 me-2">Settings</h5>
+
+                <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
+                    <i class="mdi mdi-close noti-icon"></i>
+                </a>
+            </div>
+
+            <!-- Settings -->
+            <hr class="mt-0" />
+
+
+            <div class="px-4 py-2">
+                <h6 class="mb-3">Select Custome Colors</h6>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input theme-color" type="radio" name="theme-mode"
+                        id="theme-default" value="default" onchange="document.documentElement.setAttribute('data-theme-mode', 'default')" checked>
+                    <label class="form-check-label" for="theme-default">Default</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input theme-color" type="radio" name="theme-mode"
+                        id="theme-red" value="red" onchange="document.documentElement.setAttribute('data-theme-mode', 'red')">
+                    <label class="form-check-label" for="theme-red">Red</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input theme-color" type="radio" name="theme-mode"
+                        id="theme-teal" value="teal" onchange="document.documentElement.setAttribute('data-theme-mode', 'teal')">
+                    <label class="form-check-label" for="theme-teal">Teal</label>
+                </div>
+            </div>
+
+
+            <h6 class="text-center mb-0 mt-3">Choose Layouts</h6>
+
+            <div class="p-4">
+                <div class="mb-2">
+                    <img src="assets/images/layouts/layout-1.jpg" class="img-thumbnail" alt="">
+                </div>
+                <div class="form-check form-switch mb-3">
+                    <input type="checkbox" class="form-check-input theme-choice" id="light-mode-switch" checked />
+                    <label class="form-check-label" for="light-mode-switch">Light Mode</label>
+                </div>
+
+                <div class="mb-2">
+                    <img src="assets/images/layouts/layout-2.jpg" class="img-thumbnail" alt="">
+                </div>
+                <div class="form-check form-switch mb-3">
+                    <input type="checkbox" class="form-check-input theme-choice" id="dark-mode-switch" data-bsStyle="assets/css/bootstrap-dark.min.css" data-appStyle="assets/css/app-dark.min.html" />
+                    <label class="form-check-label" for="dark-mode-switch">Dark Mode</label>
+                </div>
+
+                <div class="mb-2">
+                    <img src="assets/images/layouts/layout-3.jpg" class="img-thumbnail" alt="">
+                </div>
+                <div class="form-check form-switch mb-5">
+                    <input type="checkbox" class="form-check-input theme-choice" id="rtl-mode-switch" data-appStyle="assets/css/app-rtl.min.css" />
+                    <label class="form-check-label" for="rtl-mode-switch">RTL Mode</label>
+                </div>
+
+
+            </div>
+
+        </div> <!-- end slimscroll-menu-->
+    </div>
+    <!-- /Right-bar -->
+
+    <!-- Right bar overlay-->
+    <div class="rightbar-overlay"></div>
+
+    <!-- JAVASCRIPT -->
+    <script src="{{ asset('assets/libs/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/metismenu/metisMenu.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/simplebar/simplebar.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/node-waves/waves.min.js') }}"></script>
+    <script src="{{ asset('assets/js/app.js') }}"></script>
+    <!--Morris Chart-->
+    <script src="{{ asset('assets/libs/morris.js/morris.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/raphael/raphael.min.js') }}"></script>
+
+    <script src="{{ asset('assets/js/pages/dashboard.init.js') }}"></script>
+
+    <script src="{{ asset('assets/js/app.js') }}"></script>
+
+    <script>
+        function live(inputId, previewId) {
+            const input = document.getElementById(inputId);
+            const preview = document.getElementById(previewId);
+
+            input.addEventListener('input', () => {
+                preview.innerText = input.value || preview.dataset.default;
+            });
+        }
+
+        // set default text
+        document.querySelectorAll('[id^="p_"]').forEach(el => {
+            el.dataset.default = el.innerText;
+        });
+
+        live('your_name', 'p_name');
+        live('your_address', 'p_address');
+        live('date', 'p_date');
+
+        live('hm_name', 'p_hm_name');
+        live('hm_name', 'p_dear');
+        live('hm_title', 'p_hm_title');
+        live('company_name', 'p_company_name');
+        live('company_name', 'p_company_inline');
+        live('company_address', 'p_company_address');
+
+        live('job_title', 'p_job');
+        live('body_paragraph', 'p_body');
+        live('closing_paragraph', 'p_closing');
+        live('signature', 'p_signature');
+    </script>
+
+    <script>
+
+        document.getElementById('btnSave').addEventListener('click', () => {
+            alert('Data berhasil ditambahkan ke Database (simulasi)');
+        });
+
+        //document.getElementById('btnPrint').addEventListener('click', () => {
+           // window.print();
+        //});
+
+        document.getElementById('btnClear').addEventListener('click', () => {
+
+            document.querySelectorAll('input, textarea').forEach(el => {
+                el.value = '';
+            });
+
+            document.querySelectorAll('[id^="p_"]').forEach(el => {
+                el.innerText = el.dataset.default;
+            });
+        });
+    </script>
+
+
+</body>
+
+
+<!-- Mirrored from themesbrand.com/lexa-mvc5/layouts/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 14 Jan 2026 08:17:12 GMT -->
+
+</html>

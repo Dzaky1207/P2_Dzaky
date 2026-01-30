@@ -1,4 +1,4 @@
-@extends('menu.navbar')
+@extends('menu/navbar')
 
 @section('content')
 <div class="pc-container">
