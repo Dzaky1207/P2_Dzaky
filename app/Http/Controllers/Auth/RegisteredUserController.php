@@ -29,15 +29,15 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => 'owner',
+            'role' => 'admin',
         ]);
 
         Auth::login($user);
         $request->session()->regenerate();
 
-        return $user->role === 'owner'
+        return $user->role === 'admin'
             ? redirect()->route('dashboard')
-            : redirect()->route('owner');
+            : redirect()->route('admin');
     }
 
     public function create()

@@ -110,6 +110,16 @@
                             <span class="pc-mtext" data-i18n="Dashboard">Dashboard</span>
                         </a>
                     </li>
+                    <li class="pc-item pc-caption">
+                        <label data-i18n="pages">Pages</label>
+                        <i class="ph ph-shield-checkered"></i>
+                    </li>
+                    <li class="pc-item">
+                        <a href="{{ route('Pasien.pasien') }}" class="pc-link">
+                            <span class="pc-micon"> <i class="ph ph-user-circle-plus"></i></span>
+                            <span class="pc-mtext">Daftar Data Pasien</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
