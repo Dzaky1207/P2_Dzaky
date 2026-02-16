@@ -11,9 +11,13 @@ Route::get('/', function () {
     return view('auth.login');
 })->name('welcome');
 
-Route::get('/dashboard', function () {
+Route::get('/admin/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->name('dashboard');
+
+Route::get('/dokter/dashboard', function () {
+    return view('Dokter.dashboard');
+})->name('Dokter.dashboard');
 
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])->name('login');
 Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');

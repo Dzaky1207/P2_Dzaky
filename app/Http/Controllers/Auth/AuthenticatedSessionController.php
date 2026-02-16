@@ -28,9 +28,12 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        if (Auth::user()->role === 'owner') {
+        if (Auth::user()->role === 'admin') {
             return redirect()->route('dashboard'); // Redirect ke dashboard admin
+        } else if (Auth::user()->role === 'Dokter') {
+            return redirect()->route('Dokter.dashboard'); // Redirect ke dashboard dokter
         }
+
         return redirect()->route('welcome'); // Redirect ke halaman user biasa
     }
 
