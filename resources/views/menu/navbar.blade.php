@@ -115,9 +115,51 @@
                         <i class="ph ph-shield-checkered"></i>
                     </li>
                     <li class="pc-item">
+                        <a href="{{ route('Dokter.dokter') }}" class="pc-link">
+                            <span class="pc-micon"> <i class="ph ph-address-book-tabs"></i></span>
+                            <span class="pc-mtext">Daftar Data Dokter</span>
+                        </a>
+                    </li>
+                    <li class="pc-item">
+                        <a href="{{ route('Farmasi.farmasi') }}" class="pc-link">
+                            <span class="pc-micon"> <i class="ph ph-address-book"></i></span>
+                            <span class="pc-mtext">Daftar Data Farmasi</span>
+                        </a>
+                    </li>
+                    <li class="pc-item">
                         <a href="{{ route('Pasien.pasien') }}" class="pc-link">
                             <span class="pc-micon"> <i class="ph ph-user-circle-plus"></i></span>
                             <span class="pc-mtext">Daftar Data Pasien</span>
+                        </a>
+                    </li>
+                    <li class="pc-item">
+                        <a href="{{ route('Antrian.antrian') }}" class="pc-link">
+                            <span class="pc-micon"> <i class="ph ph-timer"></i></span>
+                            <span class="pc-mtext">Daftar Data Antrian</span>
+                        </a>
+                    </li>
+                    <li class="pc-item">
+                        <a href="{{ route('Poli.poli') }}" class="pc-link">
+                            <span class="pc-micon"> <i class="ph ph-database"></i></span>
+                            <span class="pc-mtext">Daftar Data Poli</span>
+                        </a>
+                    </li>
+                    <li class="pc-item">
+                        <a href="{{ route('Obat.obat') }}" class="pc-link">
+                            <span class="pc-micon"> <i class="ph ph-pill"></i></span>
+                            <span class="pc-mtext">Daftar Data Obat</span>
+                        </a>
+                    </li>
+                    <li class="pc-item">
+                        <a href="{{ route('Rumah.rumah') }}" class="pc-link">
+                            <span class="pc-micon"> <i class="ph ph-hospital"></i></span>
+                            <span class="pc-mtext">Daftar Data Rumah Sakit</span>
+                        </a>
+                    </li>
+                    <li class="pc-item">
+                        <a href="{{ route('Riwayat.riwayat') }}" class="pc-link">
+                            <span class="pc-micon"> <i class="ph ph-stack"></i></span>
+                            <span class="pc-mtext">Daftar Data Riwayat</span>
                         </a>
                     </li>
                 </ul>
