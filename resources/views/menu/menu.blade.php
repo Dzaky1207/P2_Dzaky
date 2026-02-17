@@ -120,12 +120,6 @@
                             <span class="pc-mtext">Daftar Data Pasien</span>
                         </a>
                     </li>
-                    <li class="pc-item">
-                        <a href="{{ route('Pasien.pasien') }}" class="pc-link">
-                            <span class="pc-micon"> <i class="ph ph-user-circle-plus"></i></span>
-                            <span class="pc-mtext">Daftar Data Pasien</span>
-                        </a>
-                    </li>
                 </ul>
             </div>
         </div>
