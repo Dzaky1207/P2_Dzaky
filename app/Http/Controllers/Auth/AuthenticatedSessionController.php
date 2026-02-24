@@ -32,6 +32,8 @@ class AuthenticatedSessionController extends Controller
             return redirect()->route('dashboard'); // Redirect ke dashboard admin
         } else if (Auth::user()->role === 'Dokter') {
             return redirect()->route('Dokter.dashboard'); // Redirect ke dashboard dokter
+        } else if (Auth::user()->role === 'Farmasi') {
+            return redirect()->route('Farmasi.dashboard'); // Redirect ke dashboard farmasi
         }
 
         return redirect()->route('welcome'); // Redirect ke halaman user biasa

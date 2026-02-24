@@ -21,11 +21,15 @@ Route::get('/', function () {
 
 Route::get('/admin/dashboard', function () {
     return view('dashboard');
-})->name('dashboard');
+})->middleware('auth')->name('dashboard');
 
 Route::get('/dokter/dashboard', function () {
     return view('Dokter.dashboard');
-})->name('Dokter.dashboard');
+})->middleware('auth')->name('Dokter.dashboard');
+
+Route::get('/farmasi/dashboard', function () {
+    return view('Farmasi.dashboard');
+})->middleware('auth')->name('Farmasi.dashboard');
 
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])->name('login');
 Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');
