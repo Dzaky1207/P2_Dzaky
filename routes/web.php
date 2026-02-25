@@ -19,17 +19,25 @@ Route::get('/', function () {
     return view('auth.login');
 })->name('welcome');
 
-Route::get('/admin/dashboard', function () {
-    return view('dashboard');
+Route::get('/dashboard', function () {
+
+    $role = strtolower(auth()->user()->role);
+
+    if ($role == 'admin') {
+        return view('dashboard');
+    }
+
+    if ($role == 'dokter') {
+        return view('Dokter.dashboard');
+    }
+
+    if ($role == 'farmasi') {
+        return view('Farmasi.dashboard');
+    }
+
+    abort(403);
+
 })->middleware('auth')->name('dashboard');
-
-Route::get('/dokter/dashboard', function () {
-    return view('Dokter.dashboard');
-})->middleware('auth')->name('Dokter.dashboard');
-
-Route::get('/farmasi/dashboard', function () {
-    return view('Farmasi.dashboard');
-})->middleware('auth')->name('Farmasi.dashboard');
 
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])->name('login');
 Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');
@@ -96,6 +104,25 @@ Route::get('/Poli', [PoliController::class, 'poli'])->name('Poli.poli');
 Route::get('/Poli/create', [PoliController::class, 'create'])->name('Poli.create');
 Route::post('/Poli/store', [PoliController::class, 'store'])->name('Poli.store');
 Route::delete('/Poli/{id}', [PoliController::class, 'destroy'])->name('Poli.destroy');
+
+// Untuk Klinik
+Route::get('Klinik', [KlinikController::class, 'index'])->name('Klinik.klinik');
+Route::get('/Klinik/formklinik/{kode_pasien}', [KlinikController::class, 'formklinik'])
+    ->name('Klinik.formklinik');
+
+Route::post('/Klinik/simpan/{kode_pasien}', [KlinikController::class, 'simpan'])
+    ->name('Klinik.simpan');
+
+Route::put('/Klinik/update/{kode_pasien}', [KlinikController::class, 'updateSemua'])
+    ->name('Klinik.updateSemua');
+
+Route::post('/Klinik/selesai/{kode_pasien}', [KlinikController::class, 'selesai'])
+    ->name('Klinik.selesai');
+
+Route::get(
+    '/Klinik/formklinik/{kode_pasien}',
+    [KlinikController::class, 'form']
+)->name('Klinik.formklinik');
 
 //Untuk Riwayat
 Route::get('/Riwayat', [RiwayatController::class, 'index'])->name('Riwayat.riwayat');

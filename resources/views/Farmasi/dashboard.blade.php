@@ -1,4 +1,4 @@
-@extends('menu/farmasi')
+@extends('menu/navbar')
 
 @section('content')
     <div class="pc-container">

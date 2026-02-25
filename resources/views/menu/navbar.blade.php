@@ -98,71 +98,153 @@
                 </a>
             </div>
             <div class="navbar-content">
+                @auth
+                @php
+                $role = strtolower(auth()->user()->role);
+                @endphp
+
                 <ul class="pc-navbar">
+
+                    {{-- ===== Navigation ===== --}}
                     <li class="pc-item pc-caption">
-                        <label data-i18n="Navigation">Navigation</label>
+                        <label>Navigation</label>
                     </li>
+
                     <li class="pc-item">
                         <a href="{{ route('dashboard') }}" class="pc-link">
                             <span class="pc-micon">
                                 <i class="ph ph-house-line"></i>
                             </span>
-                            <span class="pc-mtext" data-i18n="Dashboard">Dashboard</span>
+                            <span class="pc-mtext">Dashboard</span>
                         </a>
                     </li>
+
+
+                    {{-- ================= ADMIN ================= --}}
+                    @if($role === 'admin')
+
                     <li class="pc-item pc-caption">
-                        <label data-i18n="pages">Pages</label>
-                        <i class="ph ph-shield-checkered"></i>
+                        <label>Manajemen User</label>
                     </li>
+
                     <li class="pc-item">
                         <a href="{{ route('Dokter.dokter') }}" class="pc-link">
-                            <span class="pc-micon"> <i class="ph ph-address-book-tabs"></i></span>
-                            <span class="pc-mtext">Daftar Data Dokter</span>
+                            <span class="pc-micon"><i class="ph ph-address-book-tabs"></i></span>
+                            <span class="pc-mtext">Data Dokter</span>
                         </a>
                     </li>
+
                     <li class="pc-item">
                         <a href="{{ route('Farmasi.farmasi') }}" class="pc-link">
-                            <span class="pc-micon"> <i class="ph ph-address-book"></i></span>
-                            <span class="pc-mtext">Daftar Data Farmasi</span>
+                            <span class="pc-micon"><i class="ph ph-address-book"></i></span>
+                            <span class="pc-mtext">Data Farmasi</span>
                         </a>
                     </li>
-                    <li class="pc-item">
-                        <a href="{{ route('Pasien.pasien') }}" class="pc-link">
-                            <span class="pc-micon"> <i class="ph ph-user-circle-plus"></i></span>
-                            <span class="pc-mtext">Daftar Data Pasien</span>
-                        </a>
+
+                    <li class="pc-item pc-caption">
+                        <label>Master Data</label>
                     </li>
-                    <li class="pc-item">
-                        <a href="{{ route('Antrian.antrian') }}" class="pc-link">
-                            <span class="pc-micon"> <i class="ph ph-timer"></i></span>
-                            <span class="pc-mtext">Daftar Data Antrian</span>
-                        </a>
-                    </li>
+
                     <li class="pc-item">
                         <a href="{{ route('Poli.poli') }}" class="pc-link">
-                            <span class="pc-micon"> <i class="ph ph-database"></i></span>
-                            <span class="pc-mtext">Daftar Data Poli</span>
+                            <span class="pc-micon"><i class="ph ph-database"></i></span>
+                            <span class="pc-mtext">Data Poli</span>
                         </a>
                     </li>
+
                     <li class="pc-item">
                         <a href="{{ route('Obat.obat') }}" class="pc-link">
-                            <span class="pc-micon"> <i class="ph ph-pill"></i></span>
-                            <span class="pc-mtext">Daftar Data Obat</span>
+                            <span class="pc-micon"><i class="ph ph-pill"></i></span>
+                            <span class="pc-mtext">Data Obat</span>
                         </a>
                     </li>
+
                     <li class="pc-item">
                         <a href="{{ route('Rumah.rumah') }}" class="pc-link">
-                            <span class="pc-micon"> <i class="ph ph-hospital"></i></span>
-                            <span class="pc-mtext">Daftar Data Rumah Sakit</span>
+                            <span class="pc-micon"><i class="ph ph-hospital"></i></span>
+                            <span class="pc-mtext">Data Rumah Sakit</span>
                         </a>
                     </li>
+
+                    @endif
+
+
+
+                    {{-- ================= ADMIN & DOKTER ================= --}}
+                    @if(in_array($role, ['admin','dokter']))
+
+                    <li class="pc-item pc-caption">
+                        <label>Pelayanan</label>
+                    </li>
+
+                    <li class="pc-item">
+                        <a href="{{ route('Pasien.pasien') }}" class="pc-link">
+                            <span class="pc-micon"><i class="ph ph-user-circle-plus"></i></span>
+                            <span class="pc-mtext">Data Pasien</span>
+                        </a>
+                    </li>
+
+                    <li class="pc-item">
+                        <a href="{{ route('Antrian.antrian') }}" class="pc-link">
+                            <span class="pc-micon"><i class="ph ph-timer"></i></span>
+                            <span class="pc-mtext">Data Antrian</span>
+                        </a>
+                    </li>
+
+                    <li class="pc-item pc-caption">
+                        <label>Master Data</label>
+                    </li>
+
+                    <li class="pc-item">
+                        <a href="{{ route('Obat.obat') }}" class="pc-link">
+                            <span class="pc-micon"><i class="ph ph-pill"></i></span>
+                            <span class="pc-mtext">Data Obat</span>
+                        </a>
+                    </li>
+
+                    @endif
+
+
+
+                    {{-- ================= FARMASI ================= --}}
+                    @if($role === 'farmasi')
+
+                    <li class="pc-item pc-caption">
+                        <label>Farmasi</label>
+                    </li>
+
+                    <li class="pc-item">
+                        <a href="{{ route('Klinik.klinik') }}" class="pc-link">
+                            <span class="pc-micon"><i class="ph ph-calendar-check"></i></span>
+                            <span class="pc-mtext">Ambil Obat</span>
+                        </a>
+                    </li>
+
+                    <li class="pc-item">
+                        <a href="{{ route('Obat.obat') }}" class="pc-link">
+                            <span class="pc-micon"><i class="ph ph-pill"></i></span>
+                            <span class="pc-mtext">Stok Obat</span>
+                        </a>
+                    </li>
+
+                    @endif
+
+
+
+                    {{-- ================= SEMUA ROLE ================= --}}
+                    <li class="pc-item pc-caption">
+                        <label>Laporan</label>
+                    </li>
+
                     <li class="pc-item">
                         <a href="{{ route('Riwayat.riwayat') }}" class="pc-link">
-                            <span class="pc-micon"> <i class="ph ph-stack"></i></span>
-                            <span class="pc-mtext">Daftar Data Riwayat</span>
+                            <span class="pc-micon"><i class="ph ph-stack"></i></span>
+                            <span class="pc-mtext">Riwayat</span>
                         </a>
                     </li>
+
                 </ul>
+                @endauth
             </div>
         </div>
     </nav>

@@ -22,21 +22,26 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming authentication request.
      */
-        public function store(LoginRequest $request): RedirectResponse
+    public function store(LoginRequest $request): RedirectResponse
     {
         $request->authenticate();
-
         $request->session()->regenerate();
 
-        if (Auth::user()->role === 'admin') {
-            return redirect()->route('dashboard'); // Redirect ke dashboard admin
-        } else if (Auth::user()->role === 'Dokter') {
-            return redirect()->route('Dokter.dashboard'); // Redirect ke dashboard dokter
-        } else if (Auth::user()->role === 'Farmasi') {
-            return redirect()->route('Farmasi.dashboard'); // Redirect ke dashboard farmasi
+        $role = strtolower(Auth::user()->role);
+
+        if ($role === 'admin') {
+            return redirect()->route('dashboard');
         }
 
-        return redirect()->route('welcome'); // Redirect ke halaman user biasa
+        if ($role === 'dokter') {
+            return redirect()->route('Dokter.dashboard');
+        }
+
+        if ($role === 'farmasi') {
+            return redirect()->route('Farmasi.dashboard');
+        }
+
+        return redirect()->route('welcome');
     }
 
     /**
